@@ -16,7 +16,7 @@ public class ServiceInfo<T> {
 	/**
 	 * id of the service
 	 */
-	private int id;
+	private int sid;
 
 	/**
 	 * types of the input arguments
@@ -33,9 +33,9 @@ public class ServiceInfo<T> {
 		// Dummy Constructor for use of RPC
 	}
 
-	public ServiceInfo(String name, int id, Class<?>[] inputTypes, Class<T> outputType) {
+	public ServiceInfo(String name, int sid, Class<?>[] inputTypes, Class<T> outputType) {
 		this.name = name;
-		this.id = id;
+		this.sid = sid;
 		this.inputTypes = inputTypes;
 		this.outputType = outputType;
 	}
@@ -49,11 +49,11 @@ public class ServiceInfo<T> {
 	}
 
 	public int getId() {
-		return id;
+		return sid;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.sid = id;
 	}
 
 	public Class<?>[] getInputTypes() {
@@ -74,6 +74,6 @@ public class ServiceInfo<T> {
 
 	@Override
 	public String toString() {
-		return "{ServiceInfo   name:'"+getName()+"', id:"+id+", outputType:'"+outputType.getName()+"'}";
+		return "{ServiceInfo   name:'"+getName()+"', id:"+sid+", outputType:'"+outputType.getName()+"'}";
 	}
 }
