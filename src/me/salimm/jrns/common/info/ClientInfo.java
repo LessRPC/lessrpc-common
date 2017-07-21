@@ -13,6 +13,10 @@ public class ClientInfo {
 	
 	private int port;
 	
+	public ClientInfo() {
+		// Dummy Constructor for use of RPC
+	}
+	
 	public ClientInfo(String url, int port, StubEnvType type) {
 		this.url = url;
 		this.port = port;

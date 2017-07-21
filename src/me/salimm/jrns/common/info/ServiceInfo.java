@@ -1,8 +1,8 @@
 package me.salimm.jrns.common.info;
 
-
 /**
  * service information
+ * 
  * @author Salim
  *
  */
@@ -28,7 +28,11 @@ public class ServiceInfo<T> {
 	 * type of the output object
 	 */
 	private Class<T> outputType;
-	
+
+	public ServiceInfo() {
+		// Dummy Constructor for use of RPC
+	}
+
 	public ServiceInfo(String name, int id, Class<?>[] inputTypes, Class<T> outputType) {
 		this.name = name;
 		this.id = id;
@@ -68,4 +72,8 @@ public class ServiceInfo<T> {
 		this.outputType = outputType;
 	}
 
+	@Override
+	public String toString() {
+		return "{ServiceInfo   name:'"+getName()+"', id:"+id+", outputType:'"+outputType.getName()+"'}";
+	}
 }

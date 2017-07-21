@@ -30,6 +30,10 @@ public class ServiceProviderInfo {
 	 */
 	private StubEnvType stubType;
 
+	public ServiceProviderInfo() {
+		// Dummy Constructor for use of RPC
+	}
+
 	public ServiceProviderInfo(String ip, int port, String providerName, StubEnvType envType) {
 		this.ip = ip;
 		this.port = port;
@@ -67,6 +71,11 @@ public class ServiceProviderInfo {
 
 	public void setStubType(StubEnvType stubType) {
 		this.stubType = stubType;
+	}
+
+	@Override
+	public String toString() {
+		return "{ServiceProviderInfo url:" + ip + ", port: " + port + " }";
 	}
 
 }
