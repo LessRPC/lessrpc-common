@@ -6,29 +6,119 @@ import me.salimm.jrns.common.errors.DatabaseNotSupported;
 import me.salimm.jrns.common.info.ServiceInfo;
 import me.salimm.jrns.common.info.ServiceProviderInfo;
 
+/**
+ * service desctiption for name server
+ * @author Salim
+ *
+ */
 public interface NSService {
 
-	public ServiceProviderInfo getServer(int serviceId)
+	/**
+	 * returns one random/best service provider information for a service given the service's id
+	 * @param serviceId
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceProviderInfo getServerById(int serviceId)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
-	public ServiceProviderInfo getServer(String serviceName)
+	/**
+	 * returns one random/best service provider information for a service given the service's name
+	 * 
+	 * @param serviceName
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceProviderInfo getServerByName(String serviceName)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
-	public ServiceProviderInfo[] getAllServer(int serviceId)
+	
+	/**
+	 * returns all random/best service provider information for a service given the service's id
+	 * 
+	 * @param serviceId
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceProviderInfo[] getAllServersById(int serviceId)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
-	public ServiceProviderInfo[] getAllServer(String serviceName)
+	/**
+	 * returns all random/best service provider information for a service given the service's name
+	 * 
+	 * @param serviceName
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceProviderInfo[] getAllServersByName(String serviceName)
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+	
+	/**
+	 * returns all Service Provider informations for all avaialble services
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceProviderInfo[] getAllServer()
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
-	public ServiceInfo<?> getServiceInfo(String serviceName)
+	
+	/**
+	 * returns a service information object for given service name
+	 * 
+	 * @param serviceName
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceInfo<?> getServiceInfoByName(String serviceName)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
-	public ServiceInfo<?> getServiceInfo(int serviceId)
+	/**
+	 * returns a service information object for given service id
+	 * 
+	 * @param serviceId
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
+	public ServiceInfo<?> getServiceInfoById(int serviceId)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
+	/**
+	 * registers a new service provider for given service information
+	 * @param service
+	 * @param provider
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
 	public boolean registerServiceProvider(ServiceInfo<?> service, ServiceProviderInfo provider)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 
+	
+	/**
+	 * unregisters a new service provider for given service information
+	 * 
+	 * @param service
+	 * @param provider
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 */
 	public boolean removeServiceProvider(ServiceInfo<?> service, ServiceProviderInfo provider)
 			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
 

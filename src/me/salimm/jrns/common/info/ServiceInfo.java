@@ -1,5 +1,7 @@
 package me.salimm.jrns.common.info;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * service information
  * 
@@ -16,7 +18,7 @@ public class ServiceInfo<T> {
 	/**
 	 * id of the service
 	 */
-	private int sid;
+	private int id;
 
 	/**
 	 * types of the input arguments
@@ -33,9 +35,9 @@ public class ServiceInfo<T> {
 		// Dummy Constructor for use of RPC
 	}
 
-	public ServiceInfo(String name, int sid, Class<?>[] inputTypes, Class<T> outputType) {
+	public ServiceInfo(String name, int id, Class<?>[] inputTypes, Class<T> outputType) {
 		this.name = name;
-		this.sid = sid;
+		this.id = id;
 		this.inputTypes = inputTypes;
 		this.outputType = outputType;
 	}
@@ -48,12 +50,14 @@ public class ServiceInfo<T> {
 		this.name = name;
 	}
 
+	@JsonProperty("sid")
 	public int getId() {
-		return sid;
+		return id;
 	}
 
+	
 	public void setId(int id) {
-		this.sid = id;
+		this.id = id;
 	}
 
 	public Class<?>[] getInputTypes() {
@@ -74,6 +78,6 @@ public class ServiceInfo<T> {
 
 	@Override
 	public String toString() {
-		return "{ServiceInfo   name:'"+getName()+"', id:"+sid+", outputType:'"+outputType.getName()+"'}";
+		return "{ServiceInfo   name:'" + getName() + "', id:" + id + ", outputType:'" + outputType.getName() + "'}";
 	}
 }

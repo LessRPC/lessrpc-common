@@ -36,6 +36,15 @@ public interface DBUtils {
 	public ServiceProviderInfo[] getAllServer(Connection conn, int serviceId) throws SQLException;
 
 	/**
+	 * get list of all Server info for all service
+	 * 
+	 * @param serviceId
+	 * @return
+	 * @throws SQLException
+	 */
+	public ServiceProviderInfo[] getAllServer(Connection conn) throws SQLException;
+
+	/**
 	 * 
 	 * get list of all Server info that implements service with given name
 	 * 
