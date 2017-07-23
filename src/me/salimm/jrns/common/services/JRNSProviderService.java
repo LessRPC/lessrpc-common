@@ -1,5 +1,8 @@
 package me.salimm.jrns.common.services;
 
+import me.salimm.jrns.common.ExecutionResponse;
+import me.salimm.jrns.common.info.ClientInfo;
+
 public interface JRNSProviderService {
 
 	/**
@@ -18,5 +21,5 @@ public interface JRNSProviderService {
 	 * @param args
 	 * @return
 	 */
-	public Object execute(Object[] args);
+	public ExecutionResponse execute(ClientInfo cInfo, Object[] args);
 }
