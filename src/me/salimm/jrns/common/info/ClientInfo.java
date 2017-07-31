@@ -8,18 +8,15 @@ public class ClientInfo {
 	 * language of the client stub
 	 */
 	private StubEnvType stubType;
-	
+
 	private String url;
-	
-	private int port;
-	
+
 	public ClientInfo() {
 		// Dummy Constructor for use of RPC
 	}
-	
-	public ClientInfo(String url, int port, StubEnvType type) {
+
+	public ClientInfo(String url, StubEnvType type) {
 		this.url = url;
-		this.port = port;
 		stubType = type;
 	}
 
@@ -39,12 +36,10 @@ public class ClientInfo {
 		this.url = url;
 	}
 
-	public int getPort() {
-		return port;
-	}
-
-	public void setPort(int port) {
-		this.port = port;
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "{ClientInfo stubType: "+stubType+",  url:'"+url+"'}";
 	}
 
 }

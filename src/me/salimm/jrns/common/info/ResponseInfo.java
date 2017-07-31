@@ -1,6 +1,8 @@
 package me.salimm.jrns.common.info;
 
-import me.salimm.jrns.common.types.ResponseType;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import me.salimm.jrns.common.types.StatusType;
 
 /**
  * contains information regarding the response including status and output type
@@ -17,9 +19,9 @@ public class ResponseInfo {
 	/**
 	 * status of response
 	 */
-	private ResponseType type;
+	private StatusType type;
 
-	public ResponseInfo(ResponseType type, String outputType) {
+	public ResponseInfo(StatusType type, String outputType) {
 		this.setType(type);
 		this.setOutputType(outputType);
 
@@ -39,11 +41,12 @@ public class ResponseInfo {
 		this.outputType = outputType;
 	}
 
-	public ResponseType getType() {
+	@JsonProperty("statusType")
+	public StatusType getType() {
 		return type;
 	}
 
-	public void setType(ResponseType type) {
+	public void setType(StatusType type) {
 		this.type = type;
 	}
 
