@@ -1,0 +1,52 @@
+package org.mouji.common.services;
+
+import org.mouji.common.info.ServiceSupportInfo;
+import org.mouji.common.info.responses.ServiceResponse;
+import org.mouji.common.errors.ApplicationSpecificErrorException;
+import org.mouji.common.errors.ExecuteInternalError;
+import org.mouji.common.errors.InvalidArgsException;
+import org.mouji.common.errors.ServiceNotSupportedException;
+import org.mouji.common.info.ServiceInfo;
+import org.mouji.common.info.ServiceProviderInfo;
+import org.mouji.common.info.ServiceRequest;
+
+public interface ServiceProvider {
+
+	/**
+	 * 
+	 * This is called to check if the server is working. It has to just return a
+	 * boolean flag
+	 * 
+	 * @return
+	 */
+	public boolean ping();
+
+	/**
+	 * 
+	 * execute the function
+	 * 
+	 * @param args
+	 * @return
+	 */
+	public ServiceResponse execute(ServiceRequest request) throws ApplicationSpecificErrorException,
+			ExecuteInternalError, InvalidArgsException, ServiceNotSupportedException;
+
+	/**
+	 * 
+	 * This is called to check if the server is working. It has to just return a
+	 * boolean flag
+	 * 
+	 * @return
+	 */
+	public ServiceProviderInfo info();
+
+	/**
+	 * 
+	 * This is called to check if the server is working. It has to just return a
+	 * boolean flag
+	 * 
+	 * @return
+	 */
+	public ServiceSupportInfo service(ServiceInfo<?> info) throws ServiceNotSupportedException;
+
+}
