@@ -5,26 +5,9 @@ import java.sql.SQLException;
 
 import org.mouji.common.info.ServiceInfo;
 import org.mouji.common.info.ServiceProviderInfo;
+import org.mouji.common.info.ServiceSupportInfo;
 
 public interface DBUtils {
-
-	/**
-	 * get Server info that implements service with given id
-	 * 
-	 * @param serviceId
-	 * @return
-	 * @throws SQLException
-	 */
-	public ServiceProviderInfo getServer(Connection conn, int serviceId) throws SQLException;
-
-	/**
-	 * get Server info that implements service with given name
-	 * 
-	 * @param serviceName
-	 * @return
-	 * @throws SQLException
-	 */
-	public ServiceProviderInfo getServer(Connection conn, String serviceName) throws SQLException;
 
 	/**
 	 * get list of all Server info that implements service with given id
@@ -33,7 +16,7 @@ public interface DBUtils {
 	 * @return
 	 * @throws SQLException
 	 */
-	public ServiceProviderInfo[] getAllServer(Connection conn, int serviceId) throws SQLException;
+	public ServiceSupportInfo[] getProviders(Connection conn, ServiceInfo<?> serivce) throws SQLException;
 
 	/**
 	 * get list of all Server info for all service
@@ -42,17 +25,7 @@ public interface DBUtils {
 	 * @return
 	 * @throws SQLException
 	 */
-	public ServiceProviderInfo[] getAllServer(Connection conn) throws SQLException;
-
-	/**
-	 * 
-	 * get list of all Server info that implements service with given name
-	 * 
-	 * @param serviceName
-	 * @return
-	 * @throws SQLException
-	 */
-	public ServiceProviderInfo[] getAllServer(Connection conn, String serviceName) throws SQLException;
+	public ServiceSupportInfo[] getAllProviders(Connection conn) throws SQLException;
 
 	/**
 	 * 
@@ -85,7 +58,7 @@ public interface DBUtils {
 	 * @param provider
 	 * @return
 	 */
-	public boolean registerServiceProvider(Connection conn, ServiceInfo<?> service, ServiceProviderInfo provider);
+	public boolean register(Connection conn, ServiceSupportInfo support);
 
 	/**
 	 * remove given server from given service
@@ -95,6 +68,32 @@ public interface DBUtils {
 	 * @param provider
 	 * @return
 	 */
-	public boolean removeServiceProvider(Connection conn, ServiceInfo<?> service, ServiceProviderInfo provider);
+	public boolean unregister(Connection conn, ServiceInfo<?> service, ServiceProviderInfo provider);
 
+	/**
+	 * 
+	 * Creates service table
+	 * 
+	 * @param conn
+	 * @return
+	 */
+	public boolean createServiceTable(Connection conn);
+
+	/**
+	 * 
+	 * Creates service provider table
+	 * 
+	 * @param conn
+	 * @return
+	 */
+	public boolean createServiceProviderTable(Connection conn);
+
+	/**
+	 * 
+	 * Creates service support table
+	 * 
+	 * @param conn
+	 * @return
+	 */
+	public boolean createServiceSupportTable(Connection conn);
 }

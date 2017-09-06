@@ -20,6 +20,8 @@ public class ServiceSupportInfo {
 
 	private ServiceInfo<?> service;
 
+	private ServiceProviderInfo provider;
+
 	private SerializationFormat[] serializers;
 
 	/**
@@ -28,7 +30,7 @@ public class ServiceSupportInfo {
 	public ServiceSupportInfo() {
 	}
 
-	public ServiceSupportInfo(ServiceInfo<?> service, SerializationFormat[] serializers) {
+	public ServiceSupportInfo(ServiceInfo<?> service, ServiceProviderInfo provider, SerializationFormat[] serializers) {
 		this.service = service;
 		this.serializers = serializers;
 	}
@@ -78,5 +80,13 @@ public class ServiceSupportInfo {
 		}
 
 		return true;
+	}
+
+	public ServiceProviderInfo getProvider() {
+		return provider;
+	}
+
+	public void setProvider(ServiceProviderInfo provider) {
+		this.provider = provider;
 	}
 }

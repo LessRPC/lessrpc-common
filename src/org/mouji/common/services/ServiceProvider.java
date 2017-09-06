@@ -2,7 +2,11 @@ package org.mouji.common.services;
 
 import org.mouji.common.info.ServiceSupportInfo;
 import org.mouji.common.info.responses.ServiceResponse;
+
+import java.sql.SQLException;
+
 import org.mouji.common.errors.ApplicationSpecificErrorException;
+import org.mouji.common.errors.DatabaseNotSupported;
 import org.mouji.common.errors.ExecuteInternalError;
 import org.mouji.common.errors.InvalidArgsException;
 import org.mouji.common.errors.ServiceNotSupportedException;
@@ -28,8 +32,8 @@ public interface ServiceProvider {
 	 * @param args
 	 * @return
 	 */
-	public ServiceResponse execute(ServiceRequest request) throws ApplicationSpecificErrorException,
-			ExecuteInternalError, InvalidArgsException, ServiceNotSupportedException;
+	public ServiceResponse<?> execute(ServiceRequest request) throws ApplicationSpecificErrorException, ExecuteInternalError, InvalidArgsException,
+	ServiceNotSupportedException, ClassNotFoundException, SQLException, DatabaseNotSupported ;
 
 	/**
 	 * 
