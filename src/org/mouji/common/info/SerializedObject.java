@@ -66,6 +66,7 @@ public class SerializedObject<T> {
 
 	public void setContent(T content) {
 		this.content = content;
+		this.classPath = content.getClass().getCanonicalName();
 	}
 
 }
