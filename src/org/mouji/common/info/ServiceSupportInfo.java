@@ -32,6 +32,7 @@ public class ServiceSupportInfo {
 
 	public ServiceSupportInfo(ServiceInfo<?> service, ServiceProviderInfo provider, SerializationFormat[] serializers) {
 		this.service = service;
+		this.provider = provider;
 		this.serializers = serializers;
 	}
 
