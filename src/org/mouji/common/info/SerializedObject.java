@@ -42,7 +42,7 @@ public class SerializedObject<T> {
 
 	public SerializedObject(T obj) {
 
-		this.classPath = obj.getClass().getCanonicalName();
+		this.classPath = obj.getClass().getName();
 		content = obj;
 	}
 
@@ -66,7 +66,7 @@ public class SerializedObject<T> {
 
 	public void setContent(T content) {
 		this.content = content;
-		this.classPath = content.getClass().getCanonicalName();
+		this.classPath = content.getClass().getName();
 	}
 
 }
