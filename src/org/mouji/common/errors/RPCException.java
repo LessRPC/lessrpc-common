@@ -44,7 +44,7 @@ public class RPCException extends Exception {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return "{RPCException  status: +" + status + " , content" + content + "}";
 	}
 
 }
