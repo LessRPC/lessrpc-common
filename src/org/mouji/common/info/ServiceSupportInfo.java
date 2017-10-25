@@ -54,9 +54,11 @@ public class ServiceSupportInfo {
 
 	@Override
 	public String toString() {
-		String tmp = "{Serialization Support,  list=[";
-		for (SerializationFormat sf : serializers) {
-			tmp += sf + " , ";
+		String tmp = "{Service Provider Support, service: " + service + ",   provider: " + provider + "  serialziers=[";
+		if (serializers != null) {
+			for (SerializationFormat sf : serializers) {
+				tmp += sf + " , ";
+			}
 		}
 		return tmp + "]}";
 	}

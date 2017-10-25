@@ -59,7 +59,7 @@ public class ServiceInfo<T> {
 
 		ServiceInfo<?> info = (ServiceInfo<?>) obj;
 		return (info.getName() != null && this.getName() != null && info.getName().equals(this.getName()))
-						&& ( info.getId()==this.getId());
-
+				&& (info.getId() == this.getId());
 	}
+
 }

@@ -96,4 +96,6 @@ public interface DBUtils {
 	 * @return
 	 */
 	public boolean createServiceSupportTable(Connection conn);
+
+	public boolean cleanAllTables(Connection conn);
 }

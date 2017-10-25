@@ -49,8 +49,8 @@ public class ServiceProviderInfo {
 		return url;
 	}
 
-	public void setURL(String ip) {
-		this.url = ip;
+	public void setURL(String url) {
+		this.url = url;
 	}
 
 	@JsonProperty("env")
@@ -64,7 +64,7 @@ public class ServiceProviderInfo {
 
 	@Override
 	public String toString() {
-		return "{ServiceProviderInfo url:" + url + ", port: " + port +", env: "+env+" }";
+		return "{ServiceProviderInfo url:" + url + ", port: " + port + ", env: " + env + " }";
 	}
 
 	@Override
@@ -78,9 +78,5 @@ public class ServiceProviderInfo {
 				&& info.getPort() == this.getPort()
 				&& (info.getURL() != null && this.getURL() != null && info.getURL().equals(this.getURL()));
 	}
-	
-	
-	
-	
 
 }

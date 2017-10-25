@@ -14,7 +14,7 @@ import org.mouji.common.loadbalance.ProviderLoadBalancer;
  * @author Salim
  *
  */
-public interface NameServer {
+public interface NameServer extends NameServerFunctions {
 	/**
 	 * 
 	 * Returns one service provider information for a service given the
@@ -139,5 +139,8 @@ public interface NameServer {
 	 * @return
 	 */
 	public boolean ping();
+
+	
+	public void reset() throws SQLException, ClassNotFoundException, DatabaseNotSupported;
 
 }
