@@ -22,4 +22,8 @@ public class TextResponse extends RequestResponse<String> {
 		this.content = content;
 	}
 
+	@Override
+	public String toString() {
+		return "{TextResponse   status: "+status+" ,  content: "+content+"}";
+	}
 }
