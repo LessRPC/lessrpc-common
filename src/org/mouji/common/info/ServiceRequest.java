@@ -99,4 +99,10 @@ public class ServiceRequest {
 		return request;
 	}
 
+	@Override
+	public String toString() {
+		return "{ServiceRequest  service: " + service + " ,  requestId: " + requestId + " ,  env: " + env + " ,  args: "
+				+ args + "}";
+	}
+
 }
