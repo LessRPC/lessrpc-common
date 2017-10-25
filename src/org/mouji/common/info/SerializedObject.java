@@ -68,10 +68,10 @@ public class SerializedObject<T> {
 		this.content = content;
 		this.classPath = content.getClass().getName();
 	}
-	
+
 	@Override
 	public String toString() {
-		return "{SerializedObject clspath: "+classPath+" }";
+		return "{SerializedObject clspath: " + classPath + " }";
 	}
 
 }

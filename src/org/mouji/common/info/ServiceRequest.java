@@ -101,8 +101,13 @@ public class ServiceRequest {
 
 	@Override
 	public String toString() {
+		String tmp = "[";
+		for (int i = 0; i < args.length; i++) {
+			tmp += args[i] + ", ";
+		}
+		tmp += "]";
 		return "{ServiceRequest  service: " + service + " ,  requestId: " + requestId + " ,  env: " + env + " ,  args: "
-				+ args + "}";
+				+ tmp+"}";
 	}
 
 }
