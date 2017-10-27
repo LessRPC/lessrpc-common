@@ -46,6 +46,12 @@ public class SerializedObject<T> {
 		content = obj;
 	}
 
+	public SerializedObject(Class<T> cls) {
+
+		this.classPath = cls.getName();
+		content = null;
+	}
+
 	/**
 	 * dummy constructor for RPC
 	 */
