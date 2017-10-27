@@ -46,10 +46,10 @@ public class SerializedObject<T> {
 		content = obj;
 	}
 
-	public SerializedObject(Class<T> cls) {
+	public SerializedObject(T obj, String clsPath) {
 
-		this.classPath = cls.getName();
-		content = null;
+		this.classPath = clsPath;
+		content = obj;
 	}
 
 	/**
