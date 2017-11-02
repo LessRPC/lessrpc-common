@@ -4,6 +4,7 @@ import org.mouji.common.info.ServiceSupportInfo;
 import org.mouji.common.info.responses.ServiceResponse;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.mouji.common.errors.ApplicationSpecificErrorException;
 import org.mouji.common.errors.DatabaseNotSupported;
@@ -52,5 +53,11 @@ public interface ServiceProvider {
 	 * @return
 	 */
 	public ServiceSupportInfo service(ServiceInfo<?> info) throws ServiceNotSupportedException;
+	
+	/**
+	 * Returns the list of all supported services
+	 * @return
+	 */
+	public List<ServiceSupportInfo> listSupport();
 
 }
