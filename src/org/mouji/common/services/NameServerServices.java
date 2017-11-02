@@ -54,7 +54,20 @@ public interface NameServerServices {
 	public static final ServiceInfo<Boolean> REGISTER = new ServiceInfo<Boolean>("register", 6);
 
 	/**
-	 * Service info for registering a provider to a service
+	 * Service info for unregistering a provider to a service
 	 */
 	public static final ServiceInfo<Boolean> UNREGISTER = new ServiceInfo<Boolean>("unregister", 7);
+
+	/**
+	 * Service info for unregistering a provider to a service
+	 */
+	public static final ServiceInfo<Boolean> UNREGISTER_ALL = new ServiceInfo<Boolean>("unregister", 8);
+
+	/**
+	 * Service info for checking a provider status. The returned boolean
+	 * determines that this task has been carried out or not. It doesn't
+	 * indicate whether the provider is unreachable or not
+	 */
+	public static final ServiceInfo<Boolean> CHECK_PROVIDER_STATUS = new ServiceInfo<Boolean>("checkProviderStatus", 9);
+
 }

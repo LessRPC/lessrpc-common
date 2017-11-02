@@ -69,6 +69,16 @@ public interface DBUtils {
 	 * @return
 	 */
 	public boolean unregister(Connection conn, ServiceInfo<?> service, ServiceProviderInfo provider);
+	
+	/**
+	 * remove given server from all its registered services
+	 * 
+	 * 
+	 * @param service
+	 * @param provider
+	 * @return
+	 */
+	public boolean unregisterAll(Connection conn, ServiceProviderInfo provider);
 
 	/**
 	 * 

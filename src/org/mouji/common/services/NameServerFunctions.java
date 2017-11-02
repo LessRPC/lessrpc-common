@@ -31,15 +31,16 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public ServiceSupportInfo getProvider(ServiceInfo<?> service)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public ServiceSupportInfo getProvider(ServiceInfo<?> service) throws ClassNotFoundException, SQLException,
+			DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported,
+			RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * This function returns all service providers implementing the requested
@@ -50,15 +51,16 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public ServiceSupportInfo[] getProviders(ServiceInfo<?> service)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public ServiceSupportInfo[] getProviders(ServiceInfo<?> service) throws ClassNotFoundException, SQLException,
+			DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported,
+			RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * returns all Service Provider informations for all available services
@@ -67,14 +69,16 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public ServiceSupportInfo[] getAllProviders() throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public ServiceSupportInfo[] getAllProviders() throws ClassNotFoundException, SQLException, DatabaseNotSupported,
+			ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException,
+			RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * returns a service information object for given service name
@@ -84,15 +88,16 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public ServiceInfo<?> getServiceInfoByName(String serviceName)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public ServiceInfo<?> getServiceInfoByName(String serviceName) throws ClassNotFoundException, SQLException,
+			DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported,
+			RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * returns a service information object for given service id
@@ -102,15 +107,16 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public ServiceInfo<?> getServiceInfoById(int serviceId)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public ServiceInfo<?> getServiceInfoById(int serviceId) throws ClassNotFoundException, SQLException,
+			DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported,
+			RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * Registers a new service provider for given service information
@@ -122,15 +128,16 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public boolean register(ServiceSupportInfo support)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public boolean register(ServiceSupportInfo support) throws ClassNotFoundException, SQLException,
+			DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported,
+			RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * Unregisters a new service provider for given service information
@@ -141,6 +148,43 @@ public interface NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
+	 */
+	public boolean unregister(ServiceInfo<?> service, ServiceProviderInfo provider) throws ClassNotFoundException,
+			SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException,
+			SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+
+	/**
+	 * Unregisters a new service provider for given service information
+	 * 
+	 * @param provider
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 * @throws DatabaseNotSupported
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
+	 */
+	boolean unregisterAll(ServiceProviderInfo provider) throws ClassNotFoundException, SQLException,
+			DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported,
+			RPCException, RPCProviderFailureException, IOException, Exception;
+
+	/**
+	 * This function forces the name server to check a provider's status and
+	 * update its tables. The returned boolean indicates that the check was done
+	 * or not and is not related to the actual status of the provider
+	 * 
+	 * @param provider
+	 * @return
 	 * @throws Exception 
 	 * @throws IOException 
 	 * @throws RPCProviderFailureException 
@@ -148,16 +192,13 @@ public interface NameServerFunctions {
 	 * @throws SerializationFormatNotSupported 
 	 * @throws ResponseContentTypeCannotBePrasedException 
 	 */
-	public boolean unregister(ServiceInfo<?> service, ServiceProviderInfo provider)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
-
-	
+	public boolean checkProviderStatus(ServiceProviderInfo provider) throws ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * Determines if everything is working properly
 	 * 
 	 * @return
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public boolean ping() throws Exception;
 
