@@ -28,7 +28,7 @@ public class SerializedObjectDeserializer extends StdDeserializer<SerializedObje
 	@Override
 	public SerializedObject<?> deserialize(JsonParser parser, DeserializationContext context)
 			throws IOException, JsonProcessingException {
-		
+
 		String classPath = null;
 		Object content = null;
 		boolean isNull = false;
@@ -36,13 +36,10 @@ public class SerializedObjectDeserializer extends StdDeserializer<SerializedObje
 			String fieldname = parser.getCurrentName();
 			parser.nextToken();
 			if (fieldname.toLowerCase().equals("clspath")) {
-				System.out.println("------------ 1 ");
 				classPath = parser.getText();
 			} else if (fieldname.toLowerCase().equals("isnull")) {
-				System.out.println("------------ 2 ");
 				isNull = new Boolean(parser.getText()).booleanValue();
 			} else if (fieldname.toLowerCase().equals("content")) {
-				System.out.println("------------ 3 ");
 				try {
 					if (!isNull) {
 						content = parser.readValueAs(Class.forName(classPath));
@@ -54,12 +51,12 @@ public class SerializedObjectDeserializer extends StdDeserializer<SerializedObje
 				}
 			}
 		}
-		if(isNull){
-			return new SerializedObject<>(content,classPath);	
-		}else{
+		if (isNull) {
+			return new SerializedObject<>(content, classPath);
+		} else {
 			return new SerializedObject<>(content);
 		}
-		
+
 	}
 
 }
