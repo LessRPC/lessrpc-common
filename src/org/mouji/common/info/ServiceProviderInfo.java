@@ -23,13 +23,13 @@ public class ServiceProviderInfo {
 	/**
 	 * Environment of the stub for example language
 	 */
-	private StubEnvInfo env;
+	private EnvironmentInfo env;
 
 	public ServiceProviderInfo() {
 		// Dummy Constructor for use of RPC
 	}
 
-	public ServiceProviderInfo(String url, int port, StubEnvInfo env) {
+	public ServiceProviderInfo(String url, int port, EnvironmentInfo env) {
 		this.url = url;
 		this.port = port;
 		this.env = env;
@@ -54,11 +54,11 @@ public class ServiceProviderInfo {
 	}
 
 	@JsonProperty("env")
-	public StubEnvInfo getEnv() {
+	public EnvironmentInfo getEnv() {
 		return env;
 	}
 
-	public void setEnv(StubEnvInfo env) {
+	public void setEnv(EnvironmentInfo env) {
 		this.env = env;
 	}
 

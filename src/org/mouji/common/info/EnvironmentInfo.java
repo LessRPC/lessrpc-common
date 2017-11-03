@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Salim
  *
  */
-public class StubEnvInfo {
+public class EnvironmentInfo {
 
 	/**
 	 * Programming Language name and version in the format "token/version"
@@ -32,10 +32,10 @@ public class StubEnvInfo {
 	/**
 	 * dummy constructor for RPC
 	 */
-	public StubEnvInfo() {
+	public EnvironmentInfo() {
 	}
 
-	public StubEnvInfo(String lang, String os, String compiler) {
+	public EnvironmentInfo(String lang, String os, String compiler) {
 		this.lang = lang;
 		this.os = os;
 		this.compiler = compiler;
@@ -96,8 +96,8 @@ public class StubEnvInfo {
 		return lang.split("/")[1];
 	}
 
-	public static StubEnvInfo currentEnvInfo() {
-		StubEnvInfo info = new StubEnvInfo();
+	public static EnvironmentInfo currentEnvInfo() {
+		EnvironmentInfo info = new EnvironmentInfo();
 		info.setLang("JAVA/" + System.getProperty("java.version"));
 		info.setOSName(System.getProperty("os.name") + "/" + System.getProperty("os.version"));
 		info.setCompiler(System.getProperty("java.vendor") + "/" + System.getProperty("java.version"));
@@ -116,11 +116,11 @@ public class StubEnvInfo {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (!(obj instanceof StubEnvInfo)) {
+		if (!(obj instanceof EnvironmentInfo)) {
 			return false;
 		}
 
-		StubEnvInfo info = (StubEnvInfo) obj;
+		EnvironmentInfo info = (EnvironmentInfo) obj;
 		return (info.getOS() != null && this.getOS() != null && info.getOS().equals(this.getOS()))
 				&& (info.getCompiler() != null && this.getCompiler() != null
 						&& info.getCompiler().equals(this.getCompiler())
