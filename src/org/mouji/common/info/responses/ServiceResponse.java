@@ -2,7 +2,6 @@ package org.mouji.common.info.responses;
 
 import org.mouji.common.info.SerializedObject;
 import org.mouji.common.info.ServiceInfo;
-import org.mouji.common.info.ServiceSupportInfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
