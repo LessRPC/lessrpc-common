@@ -160,7 +160,7 @@ public interface NameServerFunctions {
 			SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
-	 * Unregisters a new service provider for given service information
+	 * Unregisters a new service provider for all of the registered services
 	 * 
 	 * @param provider
 	 * @return
