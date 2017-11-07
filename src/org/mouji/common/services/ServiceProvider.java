@@ -28,7 +28,7 @@ public interface ServiceProvider {
 
 	/**
 	 * 
-	 * execute the function
+	 * execute a service
 	 * 
 	 * @param args
 	 * @return
@@ -38,8 +38,7 @@ public interface ServiceProvider {
 
 	/**
 	 * 
-	 * This is called to check if the server is working. It has to just return a
-	 * boolean flag
+	 * This is called to get the ServiceProivder info regarding this service provider
 	 * 
 	 * @return
 	 */
@@ -47,8 +46,7 @@ public interface ServiceProvider {
 
 	/**
 	 * 
-	 * This is called to check if the server is working. It has to just return a
-	 * boolean flag
+	 * This is called to get ServuceSupportInfo for a service. It will return ServiceNotSupported Exception 
 	 * 
 	 * @return
 	 */
