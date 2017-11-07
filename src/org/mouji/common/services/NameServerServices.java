@@ -61,7 +61,7 @@ public interface NameServerServices {
 	/**
 	 * Service info for unregistering a provider from all services
 	 */
-	public static final ServiceInfo<Boolean> UNREGISTER_ALL = new ServiceInfo<Boolean>("unregister", 8);
+	public static final ServiceInfo<Boolean> UNREGISTER_ALL = new ServiceInfo<Boolean>("unregisterAll", 8);
 
 	/**
 	 * Service info for checking a provider status. The returned boolean
