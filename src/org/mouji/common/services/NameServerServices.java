@@ -59,7 +59,7 @@ public interface NameServerServices {
 	public static final ServiceInfo<Boolean> UNREGISTER = new ServiceInfo<Boolean>("unregister", 7);
 
 	/**
-	 * Service info for unregistering a provider to a service
+	 * Service info for unregistering a provider from all services
 	 */
 	public static final ServiceInfo<Boolean> UNREGISTER_ALL = new ServiceInfo<Boolean>("unregister", 8);
 
