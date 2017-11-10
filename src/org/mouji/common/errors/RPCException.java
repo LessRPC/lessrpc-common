@@ -14,6 +14,7 @@ public class RPCException extends Exception {
 	private String content;
 
 	public RPCException(int status, String content) {
+		super("RPCException  status: +" + status + " , content" + content );
 		this.status = StatusType.fromCode(status);
 		this.content = content;
 	}

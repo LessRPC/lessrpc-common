@@ -1,4 +1,4 @@
-package org.mouji.common.info;
+	package org.mouji.common.info;
 
 import org.mouji.common.serializer.SerializedObjectDeserializer;
 import org.mouji.common.serializer.SerializedObjectSerializer;

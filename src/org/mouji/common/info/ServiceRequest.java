@@ -103,7 +103,7 @@ public class ServiceRequest {
 	public String toString() {
 		String tmp = "[";
 		for (int i = 0; i < args.length; i++) {
-			tmp += args[i] + ", ";
+			tmp += args[i].getClassPath() + ", ";
 		}
 		tmp += "]";
 		return "{ServiceRequest  service: " + service + " ,  requestId: " + requestId + " ,  env: " + env + " ,  args: "

@@ -15,6 +15,10 @@ import com.fasterxml.jackson.databind.Module;
  *
  */
 public abstract class Serializer {
+	
+
+	public Serializer() {
+	}
 
 	/**
 	 * Serializes an object to a specific class
@@ -88,5 +92,6 @@ public abstract class Serializer {
 	}
 	
 	public abstract Serializer copy();
+
 
 }

@@ -38,7 +38,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Salim
  *
  */
-public class ServiceResponse<T> {
+public class ServiceResponse<T>{
 
 	/**
 	 * service information
@@ -136,4 +136,5 @@ public class ServiceResponse<T> {
 
 		return true;
 	}
+
 }
