@@ -3,6 +3,7 @@ package org.mouji.common.services;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import org.mouji.common.errors.ApplicationSpecificErrorException;
 import org.mouji.common.errors.DatabaseNotSupported;
 import org.mouji.common.errors.RPCException;
 import org.mouji.common.errors.RPCProviderFailureException;
@@ -20,6 +21,8 @@ import org.mouji.common.loadbalance.ProviderLoadBalancer;
  *
  */
 public interface NameServer extends NameServerFunctions {
+	
+	
 	/**
 	 * 
 	 * Returns one service provider information for a service given the
@@ -35,7 +38,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	public ServiceSupportInfo getProvider(ServiceInfo<?> service)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * This function returns all service providers implementing the requested
@@ -49,7 +52,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	public ServiceSupportInfo[] getProviders(ServiceInfo<?> service)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * returns all Service Provider informations for all avaialble services
@@ -60,7 +63,7 @@ public interface NameServer extends NameServerFunctions {
 	 * @throws DatabaseNotSupported
 	 */
 	@Override
-	public ServiceSupportInfo[] getAllProviders() throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+	public ServiceSupportInfo[] getAllProviders() throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * returns a service information object for given service name
@@ -73,7 +76,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	public ServiceInfo<?> getServiceInfoByName(String serviceName)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * returns a service information object for given service id
@@ -86,7 +89,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	public ServiceInfo<?> getServiceInfoById(int serviceId)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * Registers a new service provider for given service information
@@ -98,10 +101,11 @@ public interface NameServer extends NameServerFunctions {
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 * @throws DatabaseNotSupported
+	 * @throws ApplicationSpecificErrorException 
 	 */
 	@Override
 	public boolean register(ServiceSupportInfo support)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * Unregisters a new service provider for given service information
@@ -115,7 +119,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	public boolean unregister(ServiceInfo<?> service, ServiceProviderInfo provider)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * Unregisters a new service provider for given service information
@@ -134,7 +138,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	boolean unregisterAll(ServiceProviderInfo provider)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * This function forces the name server to check a provider's status and
@@ -152,7 +156,7 @@ public interface NameServer extends NameServerFunctions {
 	 */
 	@Override
 	public boolean checkProviderStatus(ServiceProviderInfo provider)
-			throws ClassNotFoundException, SQLException, DatabaseNotSupported;
+			throws ClassNotFoundException, SQLException, DatabaseNotSupported, ApplicationSpecificErrorException;
 
 	/**
 	 * Get used load balancer

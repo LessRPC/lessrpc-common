@@ -19,6 +19,12 @@ import org.mouji.common.info.ServiceSupportInfo;
  *
  */
 public interface NameServerFunctions {
+
+	public static final String ERROR_SERVICE_PROVIDER_EXISTS_MSG = "Service Provider already registered";
+	public static final int ERROR_SERVICE_PROVIDER_EXISTS_CODE = 3001;
+	
+	
+
 	/**
 	 * 
 	 * Returns one service provider information for a service given the
@@ -185,14 +191,15 @@ public interface NameServerFunctions {
 	 * 
 	 * @param provider
 	 * @return
-	 * @throws Exception 
-	 * @throws IOException 
-	 * @throws RPCProviderFailureException 
-	 * @throws RPCException 
-	 * @throws SerializationFormatNotSupported 
-	 * @throws ResponseContentTypeCannotBePrasedException 
+	 * @throws Exception
+	 * @throws IOException
+	 * @throws RPCProviderFailureException
+	 * @throws RPCException
+	 * @throws SerializationFormatNotSupported
+	 * @throws ResponseContentTypeCannotBePrasedException
 	 */
-	public boolean checkProviderStatus(ServiceProviderInfo provider) throws ResponseContentTypeCannotBePrasedException, SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
+	public boolean checkProviderStatus(ServiceProviderInfo provider) throws ResponseContentTypeCannotBePrasedException,
+			SerializationFormatNotSupported, RPCException, RPCProviderFailureException, IOException, Exception;
 
 	/**
 	 * Determines if everything is working properly

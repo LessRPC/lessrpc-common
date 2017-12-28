@@ -3,6 +3,7 @@ package org.mouji.common.db;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.mouji.common.errors.ServiceProviderAlreadyExistsException;
 import org.mouji.common.info.ServiceInfo;
 import org.mouji.common.info.ServiceProviderInfo;
 import org.mouji.common.info.ServiceSupportInfo;
@@ -57,8 +58,9 @@ public interface DBUtils {
 	 * @param service
 	 * @param provider
 	 * @return
+	 * @throws ServiceProviderAlreadyExistsException
 	 */
-	public boolean register(Connection conn, ServiceSupportInfo support);
+	public boolean register(Connection conn, ServiceSupportInfo support) throws ServiceProviderAlreadyExistsException;
 
 	/**
 	 * remove given server from given service
@@ -69,7 +71,7 @@ public interface DBUtils {
 	 * @return
 	 */
 	public boolean unregister(Connection conn, ServiceInfo<?> service, ServiceProviderInfo provider);
-	
+
 	/**
 	 * remove given server from all its registered services
 	 * 
