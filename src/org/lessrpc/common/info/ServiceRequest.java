@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <li><strong>rid*: </strong>contains the request id generated for the request.
  * request id can be used by the client to identify responses in asynchronous or
  * batch mode.</li>
- * <li><strong>args*: </strong> an array of SerializedObject instanc</li>
+ * <li><strong>args*: </strong> an array of Object instanc</li>
  * </ul>
  * <br/>
  * 
@@ -41,7 +41,7 @@ public class ServiceRequest {
 	/**
 	 * list of argument objects
 	 */
-	private SerializedObject<?>[] args;
+	private Object[] args;
 
 	/**
 	 * dummy constructor for serialization
@@ -49,18 +49,18 @@ public class ServiceRequest {
 	public ServiceRequest() {
 	}
 
-	public ServiceRequest(ServiceInfo<?> service, EnvironmentInfo env, long requestId, SerializedObject<?>[] args) {
+	public ServiceRequest(ServiceInfo<?> service, EnvironmentInfo env, long requestId, Object[] args) {
 		this.service = service;
 		this.env = env;
 		this.requestId = requestId;
 		this.args = args;
 	}
 
-	public SerializedObject<?>[] getArgs() {
+	public Object[] getArgs() {
 		return args;
 	}
 
-	public void setArgs(SerializedObject<?>[] args) {
+	public void setArgs(Object[] args) {
 		this.args = args;
 	}
 
@@ -90,12 +90,7 @@ public class ServiceRequest {
 	}
 
 	public static ServiceRequest create(ServiceInfo<?> service, long id, Object[] args) {
-		SerializedObject<?>[] serializedArgs = new SerializedObject[args.length];
-		for (int i = 0; i < serializedArgs.length; i++) {
-			serializedArgs[i] = new SerializedObject<>(args[i]);
-		}
-
-		ServiceRequest request = new ServiceRequest(service, EnvironmentInfo.currentEnvInfo(), id, serializedArgs);
+		ServiceRequest request = new ServiceRequest(service, EnvironmentInfo.currentEnvInfo(), id, args);
 		return request;
 	}
 
@@ -103,11 +98,11 @@ public class ServiceRequest {
 	public String toString() {
 		String tmp = "[";
 		for (int i = 0; i < args.length; i++) {
-			tmp += args[i].getClassPath() + ", ";
+			tmp += args[i].getClass().getName() + ", ";
 		}
 		tmp += "]";
 		return "{ServiceRequest  service: " + service + " ,  requestId: " + requestId + " ,  env: " + env + " ,  args: "
-				+ tmp+"}";
+				+ tmp + "}";
 	}
 
 }

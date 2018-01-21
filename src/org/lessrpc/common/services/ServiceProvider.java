@@ -8,6 +8,7 @@ import org.lessrpc.common.errors.DatabaseNotSupported;
 import org.lessrpc.common.errors.ExecuteInternalError;
 import org.lessrpc.common.errors.InvalidArgsException;
 import org.lessrpc.common.errors.ServiceNotSupportedException;
+import org.lessrpc.common.info.ServiceDescription;
 import org.lessrpc.common.info.ServiceInfo;
 import org.lessrpc.common.info.ServiceProviderInfo;
 import org.lessrpc.common.info.ServiceRequest;
@@ -56,5 +57,12 @@ public interface ServiceProvider {
 	 * @return
 	 */
 	public List<ServiceSupportInfo> listSupport();
+	
+	/**
+	 * Returns the list of all supported services
+	 * @return
+	 */
+	@SuppressWarnings("rawtypes")
+	public List<ServiceDescription> listServices();
 
 }

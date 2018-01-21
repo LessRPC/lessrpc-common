@@ -1,10 +1,10 @@
 package org.lessrpc.common.serializer;
 
-
 import java.io.InputStream;
 import java.io.OutputStream;
 
 import org.lessrpc.common.info.SerializationFormat;
+import org.lessrpc.common.info.ServiceLocator;
 
 import com.fasterxml.jackson.databind.Module;
 
@@ -15,7 +15,6 @@ import com.fasterxml.jackson.databind.Module;
  *
  */
 public abstract class Serializer {
-	
 
 	public Serializer() {
 	}
@@ -39,7 +38,31 @@ public abstract class Serializer {
 	 * @throws Exception
 	 */
 	public abstract <T extends Object> T deserialize(byte[] data, Class<T> cls) throws Exception;
-	
+
+	/**
+	 * Deserializes ServiceRequest or ExecuteRequestResponse a given byte[] to a
+	 * class
+	 * 
+	 * @param data
+	 * @param cls
+	 * @return
+	 * @throws Exception
+	 */
+	public abstract <T extends Object, S extends Object> T deserialize(byte[] data, Class<T> cls,
+			ServiceLocator locator) throws Exception;
+
+	/**
+	 * Deserializes ServiceRequest or ExecuteRequestResponse a given byte[] to a
+	 * class
+	 * 
+	 * @param data
+	 * @param cls
+	 * @return
+	 * @throws Exception
+	 */
+	public abstract <T extends Object, S extends Object> T deserialize(InputStream in, Class<T> cls,
+			ServiceLocator locator) throws Exception;
+
 	public abstract <T extends Object> void serialize(T obj, Class<T> cls, OutputStream os) throws Exception;
 
 	/**
@@ -90,8 +113,7 @@ public abstract class Serializer {
 		String key = format.getName() + "/" + format.getVersion();
 		return key.hashCode();
 	}
-	
-	public abstract Serializer copy();
 
+	public abstract Serializer copy();
 
 }
