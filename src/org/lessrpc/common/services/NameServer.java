@@ -7,7 +7,6 @@ import org.lessrpc.common.errors.ApplicationSpecificErrorException;
 import org.lessrpc.common.errors.DatabaseNotSupported;
 import org.lessrpc.common.errors.RPCException;
 import org.lessrpc.common.errors.RPCProviderFailureException;
-import org.lessrpc.common.errors.ResponseContentTypeCannotBePrasedException;
 import org.lessrpc.common.errors.SerializationFormatNotSupported;
 import org.lessrpc.common.info.ServiceInfo;
 import org.lessrpc.common.info.ServiceProviderInfo;
